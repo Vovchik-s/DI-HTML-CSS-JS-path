@@ -1,0 +1,153 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: inherit;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity  : 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity  : 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translate(0);
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(230, 230, 230);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+nav span{
+margin-left: 10%;
+}
+
+nav button{
+margin-right: 10%;
+padding: 4px;
+border-color: rgba(3, 138, 255, 0.836) ;
+background-color: rgba(3, 138, 255, 0.836) ; 
+color: #fff;
+border-radius: 4px;
+}
+
+.header-text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(./img/pexels-photo-1078981.jpeg);
+    background-size:cover;
+    width: 100%;
+    height: 50vh;
+    color:#fff;
+}
+
+.registration input{
+    padding-left: 18px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: #e6e6e6;
+    background-color: #ffffff;
+    width: 250px;
+    height: 25px;
+    
+}
+
+.registration button{
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(3, 138, 255, 0.836) ;;
+    background-color:rgba(3, 138, 255, 0.836) ;
+    height: 24px;
+    width: 100px;
+    color: #fff;
+}
+
+.primary-heading {
+    color              : #fff;
+    text-transform     : uppercase;
+    backface-visibility: hidden;
+}
+
+.primary-heading_main {
+    display                  : block;
+    font-size                : 2rem;
+    font-weight              : 400;
+    letter-spacing           : .1rem;
+    animation-name           : moveInLeft;
+    animation-duration       : 1s;
+    animation-timing-function: ease-out;
+}
+
+.primary-heading_sub {
+    display                  : block;
+    font-size                : 2rem;
+    font-weight              : 700;
+    letter-spacing           : .1rem;
+    animation-name           : moveInRight;
+    animation-duration       : 1s;
+    animation-timing-function: ease-out;
+    margin-bottom: 20px;
+}
+
+section{
+    width: 100%;
+    height: 50vh;
+}
+
+.landing-container{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.unit{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+h2{
+    padding-top: 20px;
+}
+
+p{
+    padding-top: 20px;
+    color: #b6b5b5;
+}

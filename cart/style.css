@@ -1,0 +1,115 @@
+.item {
+    position     : relative;
+    width        : 263px;
+    margin-bottom: 40px;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.item:hover .box-add {
+    display: flex;
+}
+
+.item:hover {
+    
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+}
+
+.product-img {
+    width: 100%;
+}
+
+.item:hover .product-img {
+    
+     -webkit-filter: brightness(50%);
+}
+/* .cart:hover {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  
+  .cart:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+    z-index: 2;
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 261px;
+    opacity: 0;
+    background: #3a3838;
+  }
+  
+  .cart:hover img {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%);
+  } */
+
+.product {
+    width          : 263px;
+    display        : block;
+    text-decoration: none;
+}
+
+.box-product {
+    margin-top     : 60px;
+    margin-bottom  : 60px;
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+}
+
+.product-text-box {
+    padding: 20px 15px;
+}
+
+.product-text {
+    /* color         : #222222; */
+    font-size     : 13px;
+    font-weight   : 400;
+    text-transform: uppercase;
+    margin-bottom : 15px;
+}
+
+.product-price {
+    color         : #f16d7f;
+    font-size     : 16px;
+    font-weight   : 700;
+    text-transform: uppercase;
+}
+
+.box-add {
+    position       : absolute;
+    top            : 98px;
+    display        : none;
+    justify-content: center;
+    width          : 100%;
+}
+
+.add {
+    border         : 1px solid #ffffff;
+    padding        : 8px 12px;
+    color          : #ffffff;
+    font-size      : 13px;
+    font-weight    : 700;
+    text-decoration: none;
+    display        : flex;
+    align-items    : center;
+}
+
+.add:hover {
+    box-shadow: 0 0 10px #fff;
+    color          : #ffffff;
+}
+
+.add-img {
+    margin-right: 7px;
+}
+
+

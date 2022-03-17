@@ -6,59 +6,140 @@
 
 a {
     text-decoration: none;
-    color:antiquewhite;
+    color          : antiquewhite;
 }
 
-.fa-a{
+.fa-a {
     position: absolute;
-    left: 10%;
-    color: aquamarine;
+    left    : 10%;
+    color   : aquamarine;
 
 }
 
 .header {
-    display: flex;
+    display       : flex;
     flex-direction: column;
 }
 
-nav{
-    display: flex;
-    justify-content:flex-end;
-    padding: 10px;
+nav {
+    display         : flex;
+    justify-content : flex-end;
+    padding         : 10px;
     background-color: rgb(49, 45, 45);
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    height:2em;
+    font-family     : Arial, Helvetica, sans-serif;
+    font-weight     : 600;
+    height          : 2em;
 }
 
-nav span{
-margin-left: 10%;
-align-self: center;
+nav span {
+    margin-left: 10%;
+    align-self : center;
 }
 
-#help{
+.help {
     margin-right: 5%;
 }
 
-nav button{
-margin-right: 10%;
-padding: 4px;
-border-color: rgba(3, 138, 255, 0.836) ;
-background-color: rgba(3, 138, 255, 0.836) ; 
-color: #fff;
-border-radius: 4px;
+nav button {
+    margin-right    : 10%;
+    padding         : 4px;
+    border-color    : rgba(3, 138, 255, 0.836);
+    background-color: rgba(3, 138, 255, 0.836);
+    color           : #fff;
+    border-radius   : 4px;
 }
 
-.container {
+/* animated buttons */
+
+
+.inf {
+    width: 200px;
+    height: 40px;
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items:flex-start;
-    flex-direction: column;
-    background-image: url(https://github.com/Vovchik-s/Homework-1/blob/HTML/CSS/Avenger/img/peakpx.jpg?raw=true);
-    background-size:cover;
-    width: 100%;
-    height: 96vh;
-    color:#fff;
+    align-items: center;
+    align-self : center;
+}
+.inf::before {
+    content: "";
+    width: 10%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border-left: solid 2px greenyellow;
+    border-top: solid 2px greenyellow;
+    border-bottom: solid 2px greenyellow;
+    transition: all 0.3s ease;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.inf::after {
+    content: "";
+    width: 10%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    position: absolute;
+    border-right: solid 2px greenyellow;
+    border-top: solid 2px greenyellow;
+    border-bottom: solid 2px greenyellow;
+    transition: all 0.3s ease;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.inf:hover {
+    cursor: crosshair;
+}
+.inf:hover::before, .inf:hover::after {
+    width: 50%;
+}
+.inf:hover .background {
+    height: 100%;
+    transition-delay: 0.3s;
+    top: 0;
+}
+.inf:hover h1 {
+    color: white;
+    transition-delay: 0.3s;
+}
+.inf .background {
+    min-width: 100%;
+    height: 0;
+    position: absolute;
+    background-color: greenyellow;
+    opacity: 0.5;
+    bottom: 0;
+    left: 0;
+    transition: all ease 0.3s;
+    border-radius: 5px;
+}
+.inf h1 {
+    width: fit-content;
+    z-index: 5;
+    text-transform: uppercase;
+    color: greenyellow;
+    transition: all ease 0.5s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+/* animated buttons END*/
+
+
+
+.container {
+    display         : flex;
+    justify-content : center;
+    align-items     : flex-start;
+    flex-direction  : column;
+    background-image: url(./img/peakpx.jpg);
+    background-size : cover;
+    width           : 100%;
+    height          : 96vh;
+    color           : #fff;
 }
 
 
@@ -68,25 +149,25 @@ border-radius: 4px;
     backface-visibility: hidden;
 }
 
-.inform-title{
-    max-width: 30%;
+.inform-title {
+    max-width  : 30%;
     margin-left: 5%;
 }
 
 .primary-heading_main {
-    display                  : block;
-    font-size                : 2rem;
-    font-weight              : 800;
-    letter-spacing           : .1rem;
+    display       : block;
+    font-size     : 2rem;
+    padding-bottom: 2em;
+    font-weight   : 800;
+    letter-spacing: .1rem;
 }
 
 .primary-heading_sub {
-    display                  : block;
-    font-size                : 2rem;
-    font-weight              : 400;
-    letter-spacing           : .1rem;
-    margin-bottom: 20px;
+    display       : block;
+    font-size     : 2rem;
+    font-weight   : 400;
+    letter-spacing: .1rem;
+    margin-bottom : 20px;
 }
 
-
-
+@media only screen and (min-width: 800px) {}

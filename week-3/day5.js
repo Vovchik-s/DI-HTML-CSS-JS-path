@@ -1,24 +1,6 @@
-// Exercise 1 : List Of People
-// Instructions
-// Part I - Review About Arrays
-// Write code to remove “Greg” from the people array.
-
-// Write code to replace “James” to “Jason”.
-
-// Write code to add your name to the end of the people array.
-
-// Write code that console.logs Mary’s index. take a look at the indexOf method on Google.
-
-// Write code to make a copy of the people array using the slice method.
-// The copy should NOT include “Mary” or your name.
-// Hint: remember that now the people array should look like this let people = ["Mary", "Devon", "Jason", "Yourname"];
-// Hint: Check out the documentation for the slice method
-
-// Write code that gives the index of “Foo”. Why does it return -1 ?
-
-// Create a variable called last which value is the last element of the array.
-// Hint: What is the relationship between the index of the last element in the array and the length of the array?
-
+// // Exercise 1 : List Of People
+// // Instructions
+// // Part I - Review About Arrays
 
 
 let people = ["Greg", "Mary", "Devon", "James"];
@@ -31,17 +13,15 @@ people.push('Vladimir') //3
 
 let mary = people.indexOf('Mary');//4
 
-let newPeople = people.slice(1,4)//5
+let newPeople = people.slice(1, 4)//5
 
 let last = people.pop()//6
 
 console.log(last)
 
 
-// Part II - Loops
-// Using a loop, iterate through the people array and console.log each person.
-
-let people = ["Greg", "Mary", "Devon", "James"];
+// // Part II - Loops
+// // Using a loop, iterate through the people array and console.log each person.
 
 
 for (let i = 0; i < newPeople.length; i++) {
@@ -51,17 +31,8 @@ for (let i = 0; i < newPeople.length; i++) {
         break;
 }
 
-// Using a loop, iterate through the people array and exit the loop after you console.log “Jason” .
-// Hint: take a look at the break statement in the lesson.
 
-
-// Exercise 2 : Your Favorite Colors
-// Instructions
-// Create an array called colors where the value is a list of your five favorite colors.
-// Loop through the array and as you loop console.log a string like so: “My #1 choice is blue”, “My #2 choice is red” ect… .
-// Bonus: Change it to console.log “My 1st choice”, “My 2nd choice”, “My 3rd choice”, picking the correct suffix for each number.
-// Hint : create an array of suffixes to do the Bonus
-
+// // Exercise 2 : Your Favorite Colors
 
 
 function printColor(str, ...keys) {
@@ -83,13 +54,7 @@ console.log(favColor('green', 'yellow', 'blue', 'grey', 'white'))
 
 
 
-// Exercise 3 : Repeat The Question
-// Instructions
-// Prompt the user for a number.
-// Hint : Check the data type you receive from the prompt (ie. Use the typeof method)
-
-// While the number is smaller than 10 continue asking the user for a new number.
-// Tip : Which while loop is more relevant for this situation?
+// // Exercise 3 : Repeat The Question
 
 
 function Bigger() {
@@ -103,26 +68,17 @@ function Bigger() {
 
 Bigger()
 
-//OR let 
-// num = prompt("Say number")
-// if (num < 10) {
-//     prompt("Say number")
-// } else {
-//     console.log(num);
-// }
+// //OR let 
+// // num = prompt("Say number")
+// // if (num < 10) {
+// //     prompt("Say number")
+// // } else {
+// //     console.log(num);
+// // }
 
 
 
-// Exercise 4 : Building Management
-// Instructions: Review About Objects
-
-// Console.log the number of floors in the building.
-
-//     Console.log how many apartments are on the floors 1 and 3.
-
-// Console.log the name of the second tenant and the number of rooms he has in his apartment.
-
-// Check if the sum of Sarah’s and David’s rent is bigger than Dan’s rent.If it is, than increase Dan’s rent to 1200.
+// // Exercise 4 : Building Management
 
 
 let building = {
@@ -160,12 +116,7 @@ console.log(danRent)
 
 
 
-// Exercise 5 : Family
-// Instructions
-// Create an object called family with a few key value pairs.
-// Using a for loop, console.log the keys of the object.
-// Using a for loop, console.log the values of the object.
-
+// // Exercise 5 : Family
 
 
 const family = {
@@ -178,10 +129,7 @@ Object.entries(family).forEach(([key, value]) => console.log(`${key} ${value}`))
 
 
 
-// Exercise 6
-// Instruction
-// Given the object above and using a for loop, console.log “my name is Rudolf the raindeer”
-
+// // Exercise 6
 
 
 let details = {
@@ -193,11 +141,7 @@ let details = {
 Object.entries(details).forEach(([key, value]) => console.log((key + " " + value)));
 
 
-// Exercise 7 : Secret Group
-// Instructions
-// A group of friends have decided to start a secret society. The society’s name will be the first letter of each of their names sorted in alphabetical order.
-// Hint: a string is an array of letters
-// Console.log the name of their secret society. The output should be “ABJKPS”
+// // Exercise 7 : Secret Group
 
 
 let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
@@ -206,3 +150,42 @@ let secretName = "";
 names.sort().forEach((el) => secretName += el[0]);
 
 console.log(secretName)
+
+
+// Exercise 1 : Divisible By Three
+
+let numbers = [123, 8409, 100053, 333333333, 7]
+
+numbers.forEach((el) => {
+    if (el % 3 == 0) {
+        console.log('true')
+    } else {
+        console.log('false')
+    }
+});
+
+// Exercise 2 : Attendance
+// Instructions
+let guestList = {
+    randy: "Germany",
+    karla: "France",
+    wendy: "Japan",
+    norman: "England",
+    sam: "Argentina"
+}
+
+
+const about = Object.entries(guestList).forEach(([name, country])=> console.log(`${name} frome ${country}`))
+console.log(about)
+
+
+// Exercise 3 : Playing With Numbers
+
+let age = [20,5,12,43,98,55];
+let sum;
+age.reduce((prevNum, currNum)=> sum = prevNum + currNum);
+let maxNum = Math.max(...age)
+console.log(maxNum)
+
+// 1. Console.log the sum of all the numbers in the age array.
+// 2. Console.log the highest age in the array.

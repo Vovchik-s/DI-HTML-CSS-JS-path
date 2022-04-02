@@ -175,17 +175,78 @@ let guestList = {
 }
 
 
-const about = Object.entries(guestList).forEach(([name, country])=> console.log(`${name} frome ${country}`))
+const about = Object.entries(guestList).forEach(([name, country]) => console.log(`${name} frome ${country}`))
 console.log(about)
 
 
 // Exercise 3 : Playing With Numbers
 
-let age = [20,5,12,43,98,55];
+let age = [20, 5, 12, 43, 98, 55];
 let sum;
-age.reduce((prevNum, currNum)=> sum = prevNum + currNum);
+age.reduce((prevNum, currNum) => sum = prevNum + currNum);
 let maxNum = Math.max(...age)
 console.log(maxNum)
 
 // 1. Console.log the sum of all the numbers in the age array.
 // 2. Console.log the highest age in the array.
+
+
+
+// Exercise 1 : Checking The BMI
+
+const person1 = {
+    fullName: 'Andy',
+    Mass: 85,
+    Height: 182
+}
+
+const person2 = {
+    fullName: 'Sarah',
+    Mass: 57,
+    Height: 170
+}
+
+
+
+function massIndex(obj) {
+    return (obj.Mass) / (obj.Height * 2);
+}
+
+let bmi1 = massIndex(person1); //23
+let bmi2 = massIndex(person2); //17
+
+function comparison(el1, el2) {
+    if (el1 > el2) {
+        console.log(`${person1.fullName} has the largest BMI`)
+    } else {
+        console.log(`${person2.fullName} has the largest BMI`)
+    }
+}
+
+comparison(bmi1, bmi2)
+
+
+console.log(Math.round(bmi1))
+
+
+
+
+// Exercise 2 : Grade Average
+
+const grades = [78, 57, 90, 73];
+let total;
+
+function findAvg(gradesList) {
+    gradesList.reduce((acc, next) => total = acc + next);
+    total = total / 4;
+}
+
+findAvg(grades)
+
+function ifPassed(grade) {
+    if (grade >= 65) console.log('You passed')
+    else console.log('you failed, try again')
+}
+
+console.log(total);
+ifPassed(total)

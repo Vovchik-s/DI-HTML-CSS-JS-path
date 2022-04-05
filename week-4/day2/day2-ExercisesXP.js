@@ -114,7 +114,7 @@ let stock = {
     "blueberry": 1
 }
 
-let stock1 = Object.entries(stock);
+
 
 let prices = {
     "banana": 4,
@@ -123,32 +123,23 @@ let prices = {
     "orange": 1.5,
     "blueberry": 10
 }
-let prices1 = Object.entries(prices);
 
 const shoppingList = ['banana', 'orange', 'apple'];
 
 
-
-const stockKeys = Object.keys(stock);
-const stockValue = Object.values(stock);
-
-const priceKey = Object.keys(prices);
-const priceValue = Object.values(prices);
-
-
-let total = 0;
-
 function myBill(list) {
-    for (key in list) {
-        if (list[key] == priceKey[key]) {
-            total += priceValue[key];
+    let total = 0;
+    for (let item of list) {
+        if (stock[item] != 0) {
+            total += prices[item];
+            stock[item] -= 1;
         }
     }
     return total;
 }
 
-
 console.log(myBill(shoppingList))
+
 
 
 

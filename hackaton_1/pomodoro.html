@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POMODORO</title>
+    <script src="https://kit.fontawesome.com/661381bab5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="pomodoro">
+        <div class="background-sound-container">
+
+            <audio src="" loop></audio>
+
+            <span data-name="beach" onclick="onClickImage(this)" class="pomodoro__bcgr pomodoro__bcgr1">
+                <div class="selected"></div>
+            </span>
+
+            <span data-name="fireplace" onclick="onClickImage(this)" class="pomodoro__bcgr pomodoro__bcgr2">
+                <div class="selected"></div>
+            </span>
+
+            <span data-name="birds" onclick="onClickImage(this)" class="pomodoro__bcgr pomodoro__bcgr3">
+                <div class="selected"></div>
+            </span>
+
+            <span data-name="rain" onclick="onClickImage(this)" class="pomodoro__bcgr pomodoro__bcgr4">
+                <div class="selected"></div>
+            </span>
+        </div>
+
+        <div class="pomodoro-timer">
+            <div id="labelSessionBreak"></div>
+            <div class="row-pomodoro">
+                <p>Time left:</p>
+                <div id="timeLeft">25:00</div>
+            </div>
+        </div>
+
+        <div class="pomodoro-timer">
+            <div class="row-pomodoro">
+                <button id="sessionDecrement" class="btn-updown">-</button>
+                <div id="sessionLength" class="row-pomodoro lengthTime">25</div>
+                <button id="sessionIncrement" class="btn-updown">+</button>
+            </div>
+        </div>
+
+
+        <div class="pomodoro-timer  playerButton">
+            <div class="row-pomodoro pomodoro-startBtn buttonRow">
+                <button id="buttonPlay" class="btn-controller">
+                    <i id="playIcon" class="fas fa-play"></i>
+                </button>
+                <button id="buttonPause" class="btn-controller">
+                    <i id="playIcon" class="fas fa-pause"></i>
+                </button>
+                <button id="buttonRest" class="btn-controller">
+                    <h2 style="color: aliceblue;">REST</h2>
+                    <i class=" fas fa-solid fa-book-atlas"></i>
+                </button>
+
+                <button id="buttonReset" class="btn-controller">
+                    <h3>GIVE UP</h3>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/ed4e9fbefd.js"></script>
+    <script src="./src/js/music.js"></script>
+    <script src="./src/js/timer.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- IMAGES & SOUNDS I TOOK FROM OPEN SOURCE APPLICATION  -->
+<!-- https://github.com/jenius-apps/ambie -->

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+            background: linear-gradient(to right, rgb(247, 60, 60), rgb(199, 45, 45));
+            font-family: 'Times New Roman', Times, serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            transform: translate(45%);
+        }
+
+        form {
+            padding-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+
+
+        form button,
+        form input {
+            color: rgb(218, 132, 132);
+            background-color: white;
+            border: none;
+            padding: 1.5rem;
+            font-weight: bold;
+            background: white;
+            border: none;
+        }
+
+        #button {
+            position: absolute;
+            transition: all .4s;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            color: rgb(253, 15, 15);
+            background-color: white;
+            transform: translate(5px);
+            border: none;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        #listTasks {
+            position: relative;
+            background: white;
+            padding: 1rem;
+            width: 300px;
+            height: 250px;
+            display: flex;
+            justify-content: space-between;
+        }
+/* 
+        #listTasks input {
+            
+        } */
+
+        #clear {
+            position: absolute;
+            width: 70px;
+            height: 20px;
+            border: none;
+            background: white;
+            align-self: self-end;
+            color: rgb(238, 62, 62);
+            cursor: pointer;
+            font-weight: bold;margin-left: 65%;
+
+        }
+
+        .task{
+            display:flex;
+            padding-right: 5px;
+            padding-bottom: 10px;
+            font-weight: 700;
+            transition: all .3s;
+            cursor: pointer;
+        }
+        .task:hover{
+        transform: translateY(-1px);
+        filter: brightness(50%);
+        }
+
+        .newTask{
+            margin-right: 10px;
+        }
+    </style>
+
+
+    <header>
+        <h1>TO-DO LIST</h1>
+    </header>
+
+    <form>
+        <input id="input-todo" type="text">
+        <button id="button" type="submit">ADD</button>
+    </form>
+    <div id="listTasks">
+    <div id="list">
+
+    </div>
+    <button id="clear">Clear</button>
+    </div>
+
+        
+    </div>
+
+
+    </div>
+
+
+
+    <script src="Daily Challenge-Todo.js"></script>
+</body>
+
+</html>

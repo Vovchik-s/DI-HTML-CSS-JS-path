@@ -1,0 +1,49 @@
+* {
+    margin        : 0;
+    padding       : 0;
+    box-sizing    : border-box;
+    /* font-family: ; */
+}
+
+body {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    min-height     : 100vh;
+
+}
+
+.container {
+    display        : flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width        : 600px;
+    background   : #fff;
+    border-radius: 20px;
+    padding      : 30px 30px 25px;
+}
+
+
+.content {
+    margin: 35px 0;
+}
+
+
+.quote {
+    font-size : 22px;
+    text-align: center;
+}
+
+
+.quote::before {
+    content: open-quote;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.quote::after {
+    content: close-quote;
+    font-size: 35px;
+    font-weight: 700;
+}
+

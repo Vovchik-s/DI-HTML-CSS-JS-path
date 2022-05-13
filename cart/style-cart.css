@@ -1,0 +1,140 @@
+body{
+    background-color: aliceblue;
+}
+
+.item {
+    display: inline-block;
+    position     : relative;
+    width        : 263px;
+    margin: 40px;
+    transition: 0.5s ease-in-out;
+}
+
+.item:hover .box-add {
+    display: flex;
+}
+
+.item:hover {
+    transform: translateY(20px);
+}
+
+
+.item:hover .product-img {
+    filter: brightness(50%);
+}
+
+.product {
+    width          : 263px;
+    display        : block;
+    text-decoration: none;
+}
+
+.box-product {
+    margin-top     : 60px;
+    margin-bottom  : 60px;
+    text-align:center;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+}
+
+.product-text-box {
+    padding: 20px 15px;
+}
+
+.product-text {
+    color         : #222222;
+    font-size     : 13px;
+    font-weight   : 400;
+    text-transform: uppercase;
+    margin-bottom : 15px;
+}
+
+.product-price {
+    color         : #f16d7f;
+    font-size     : 16px;
+    font-weight   : 700;
+    text-transform: uppercase;
+}
+
+.new{
+    top: 10px;
+    position: absolute;
+        width: 3em;
+        height: 3em;
+        opacity: 70%;
+        border-radius: 50%;
+        line-height: 3em;  
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+        text-align: center;  
+        background: rgb(43, 131, 3);
+}
+
+.sale{
+    top: 10px;
+    right: 10px;
+    position: absolute;
+        width: 3em;
+        height: 3em;
+        opacity: 70%;
+        border-radius: 50%;
+        line-height: 3em;  
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+        text-align: center;  
+        background: rgb(235, 4, 4);
+}
+
+
+#log-btn{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #929292;
+    border-radius: 5px;
+    background-color: #ffffff;
+    height: 35px;
+    width: 50%;
+    color: #000000;
+
+}
+
+#log-btn:hover{
+    background-color:rgb(19, 163, 50) ;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.box-add {
+    position       : absolute;
+    top            : 98px;
+    display        : none;
+    justify-content: center;
+    width          : 100%;
+}
+
+.fa-solid{
+    color: #2196F3;
+
+}
+
+.add {
+    border         : 1px solid #ffffff;
+    padding        : 13px 17px;
+    margin: 10px;
+    color          : #ffffff;
+    font-size      : 13px;
+    font-weight    : 700;
+    text-decoration: none;
+    align-items    : center;
+}
+
+.add:hover {
+    box-shadow: 0 0 10px #fff;
+    color          : #ffffff;
+}
+
+
+
+

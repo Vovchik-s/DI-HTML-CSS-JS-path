@@ -19,6 +19,7 @@ let inventory = [
 
 // function getCarHonda(carInventory) {
 //     let honda = carInventory.filter(obj => {
+// filter return an array of all match but does find ?
 //         return obj.id === 5
 //     })
 //     return honda;
@@ -44,9 +45,9 @@ console.log(
 // Use the cars inventory below:
 
 
-function sortCarInventoryByYear(carInventory){
+function sortCarInventoryByYear(carInventory) {
     return carInventory.sort((x, y) => {
-        return ((x.car_year < y.car_year) ? -1 : ((x.car_year > y.car_year) ? 1 : 0) );
+        return ((x.car_year < y.car_year) ? -1 : ((x.car_year > y.car_year) ? 1 : 0));
     });
 }
 

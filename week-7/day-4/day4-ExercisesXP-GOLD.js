@@ -30,13 +30,23 @@ printFullName({first: 'Elie', last:'Schoppik'})
 // keysAndValues({ key1: true, key2: false, key3: undefined })
 // ➞ [["key1", "key2", "key3"], [true, false, undefined]]
 
+//function keysAndValues(object){
+//    const keys = Object.keys(object);
+//    const values = Object.values(object);
+//    const arr = [keys , values];
+//
+//    return arr;
+//}
+
+
 function keysAndValues(object){
-    const keys = Object.keys(object);
-    const values = Object.values(object);
-    const arr = [keys , values];
+    const arr = Object.entries(object).map(value => {
+        return value;
+    });
 
     return arr;
 }
+
 
 console.log(keysAndValues({ a: 1, b: 2, c: 3 }))
 

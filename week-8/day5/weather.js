@@ -1,0 +1,63 @@
+
+const weatherDisplay = document.getElementById("weather-display"); // Empty div
+const weatherSearch = document.getElementById("weather-search");  // input
+const weatherForm = document.getElementById('weather-form');  //form
+const addCityBtn = document.getElementById('addTown'); //button
+
+let weatherResult = [];
+
+
+class Weather {
+    constructor({ name, weather, main }) {
+            this.name = name,
+            this.weather = weather,
+            this.main = main
+    }
+    render() {
+        this.container = document.createElement("div"),
+            this.innerContainer = document.createElement("div"),
+            this.weatherImage = document.createElement("img"),
+            this.weatherName = document.createElement("h3"),
+            this.weatherTemp = document.createElement("h5"),
+            this.weatherDescription = document.createElement("h6"),
+
+            ////////////////////////////////////////////////
+            this.container.classList.add("weather"),
+            this.innerContainer.classList.add("weather-box"),
+            this.weatherImage.src = `http://openweathermap.org/img/wn/${this.weather[0].icon}@2x.png`,
+            this.weatherName.textContent = this.name,
+            this.weatherTemp.textContent = this.main.temp,
+            this.weatherDescription.textContent = this.weather[0].description,
+            ///////////////////////////////////////////////
+            this.innerContainer.appendChild(this.weatherImage),
+            this.innerContainer.appendChild(this.weatherName),
+            this.innerContainer.appendChild(this.weatherTemp),
+            this.innerContainer.appendChild(this.weatherDescription),
+            this.container.appendChild(this.innerContainer),
+            weatherDisplay.append(this.container)
+    }
+
+}
+
+
+addCityBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    const xhr = new XMLHttpRequest();
+    const request = weatherSearch.value; 
+    xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${request}&appid=6bc236fa8bd5e7e03f83fd8cea3eac74`)
+
+
+    xhr.onload = () => {
+        const success = () => {
+            const answer = JSON.parse(xhr.response);
+            weatherResult.push(answer)
+            const container = new Weather(answer);
+            container.render()
+        }
+        const error = () => console.log('Error');
+        xhr.status = 200 ? success() : error();
+    }
+
+    xhr.send();
+})

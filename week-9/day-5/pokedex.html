@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+
+        .pokemon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url(./img/FireShot\ Capture\ 168\ -\ \ -\ .png);
+        }
+
+        .pokemon-image {
+            width: 300px;
+            height: 211px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-52%, -128%);
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .pokemon-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pokemon-display {
+            transform: translate3d(81px, 153px, 10px);
+            width: 300px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #pokemon-button--previous {
+            width: 50px;
+            height: 30px;
+            background-color: aqua;
+            transform: translate3d(-355px, 144px, 10px);
+        }
+
+
+        #pokemon-button--next {
+            width: 50px;
+            height: 30px;
+            background-color: aqua;
+            transform: translate3d(-351px, 144px, 10px);
+        }
+
+        #choose {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgb(22, 151, 39);
+            transform: translate3d(115px, 146px, 10px);
+        }
+
+        .pokemon-button:active {
+            transform: translate3d(0px, 0px, 0px);
+            filter: brightness(0.5);
+        }
+    </style>
+
+    <div id="container" class="container">
+
+        <div id="pokemon-image" class="pokemon-image">
+
+        </div>
+        <div class="pokemon">
+            <div class="pokemon-display" id="pokemon-display"></div>
+            <span class="pokemon-button" id="pokemon-button--previous"></span>
+            <span class="pokemon-button" id="pokemon-button--next"></span>
+            <span class="pokemon-button" id="choose"></span>
+        </div>
+
+    </div>
+    <img class="loading" id="loading" src="./img/spinner.gif" alt="loading">
+
+
+    <script src="pokedex.js"></script>
+</body>
+
+</html>

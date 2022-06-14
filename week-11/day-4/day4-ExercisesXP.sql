@@ -128,5 +128,5 @@ WHERE LENGTH(first_name) >= 8;
 
 -- Write a query to join in uppercase, the first letter of the first_name, with the last_name, with '@example.com‘ in the email column.
 UPDATE employees
-SET email = CONCAT(substring(employees.first_name, 1,1), substring(employees.last_name, 1,1),(email, '@example.com'))
+SET email = CONCAT(substring(employees.first_name, 1,1), substring(employees.last_name, 1),(email, '@example.com'))
 

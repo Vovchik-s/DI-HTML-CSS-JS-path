@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        name: <input type="text" name="name" value="" id="name">
+        last name: <input type="text" name="lastname" value="" id="lastname">
+        <button type="button" name="button" onClick="alert">alert</button>
+
+    </div>
+
+
+    <script>
+        function alert() {
+        alert("Hello " + document.getElementById("name").value + " " + document.getElementById("lastname").value);
+        
+        }
+
+    </script>    
+    <!-- <script src="../script.js"></script> -->
+</body>
+
+</html>

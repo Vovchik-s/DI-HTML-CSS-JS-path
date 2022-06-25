@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    
+    <!-- NAV -->
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="blog content">
+        <h2><%= title  %> </h2>
+        <!-- form to add products -->
+        <form method="post" >
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="amount" placeholder="Amount">
+            <input type="submit" value="Add">
+        </form>
+
+
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+
+</body>
+</html>

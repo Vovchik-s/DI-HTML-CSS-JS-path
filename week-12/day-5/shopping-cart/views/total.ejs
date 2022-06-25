@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    
+    <!-- NAV -->
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="blog content">
+        <h2><%= title %> </h2>
+
+        <ul>
+            <% products.forEach(function(product) { %>
+                <li>
+                    <%= product.name %>
+                    <%= product.amount %>
+                </li>
+            <% }); %>
+        </ul>
+
+
+
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+
+</body>
+</html>

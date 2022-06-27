@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEADER -->
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/nav.ejs') %>
+
+            </div>
+
+
+            <section class="hero">
+         
+
+                <div class="container" style="flex-direction: column">
+                    <!--  form to add products -->
+
+         
+
+                    <form action="/update/<%= product.id %>" class="form" method="POST">
+                        <div class="hero__text container--pall">
+                            <a class="person-logo" href="#">
+                                <img src="/images/person.png" alt="">
+                            </a>
+                            <h1>Edit your post</h1>
+                        </div>
+                        <input type="hidden" name="id" value="<%- product.id %>">
+                        <div class="form__group">
+                            <label for="price">Name</label>
+                            <input class="form__input" type="text" name="name" id="name" value="<%- product.name %>">
+                        </div>
+                        <div class="form__group">
+                            <label for="description">description</label>
+                            <textarea  class="form__input" name="description" id="description" cols="30"
+                                rows="10"><%- product.description %></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label for="price">Price</label>
+                            <input class="form__input" type="number" name="price" id="price" value="<%- product.price %>">
+                        </div>
+                        <div class="form__group">
+                            <label for="image">Image</label>
+                            <input class="form__input" type="file" name="image" id="image" value="<%- product.image %>">
+                        </div>
+                        <input class="form__input" type="submit" value="Update product">
+                    </form>
+
+                    
+                </div>
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+            <%- include('./partials/footer.ejs') %>
+
+
+    </body>
+
+</html>

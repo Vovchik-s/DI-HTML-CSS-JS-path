@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEADER -->
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/nav.ejs') %>
+
+
+            <section class="articles">
+                <div class="article__content container container--pall">
+                    <h2>Our products</h2>
+
+                    <div class="article__grid">
+
+
+                            <% products.forEach((product)=> { %>
+                                <a class="article__item">
+                                    <div class="article__image" style=
+                                    "background-image: url('/images/<%= product.img %>')"
+                                        alt="<%= product.name %>">
+                                    </div>
+                                    <div class="article__text">
+                                        <div class="article__price">$<%= product.price %>
+                                        </div>
+                                        <div class="article__name">
+                                            <%= product.name %>
+                                        </div>
+                                        <div class="article__description">
+                                            <%= product.description %>
+                                        </div>
+    
+                                        <div class="article__description">
+                                            ID : <%= product.id %>
+                                        </div>
+    
+                                        <!-- edit button -->
+                                        <form action="/update/<%= product.id %>">
+                                            <input  class="btn btn--primary" type="submit" value="EDIT">
+                                            
+                                        </form>
+
+                                        <form action="/delete/<%= product.id %>">
+                                            <input  class="btn btn--primary" type="submit" value="Delete">
+                                        </form>
+                                        
+                                        <!-- <div class="article__description">
+                                            <a href="/update/<= product.id %>">Edit</a>
+                                        </div> -->
+                                        <!-- delete button -->
+                                        <!-- <div class="article__description">
+                                            <a href="/delete/<= product.id %>">Delete</a>
+                                        </div> -->
+                                    </div>
+                                </a>
+                                <% }); %>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- FOOTER -->
+            <%- include('./partials/footer.ejs') %>
+
+
+    </body>
+
+</html>

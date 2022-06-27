@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEADER -->
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/nav.ejs') %>
+
+            </div>
+
+
+
+
+            <section class="hero">
+                <div class="container" style="flex-direction: column">
+
+
+                    <div class="hero__text container--pall">
+                        <a class="person-logo" href="#">
+                            <img src="/images/person.png" alt="">
+                        </a>
+                        <h1>Sell on your own terms</h1>
+                    </div>
+                    <!--  form to add products -->
+
+                    <form action="/selling" class="form" method="POST">
+                        <input class="form__input" type="text" name="name" placeholder="Name">
+                        <textarea class="form__input" type="text" name="description"
+                        placeholder="Description"></textarea>
+                        <input class="form__input" type="text" name="price" placeholder="Price"> 
+                        <!-- upload image -->
+                        <input class="form__input" type="file" name="image" placeholder="Image">
+                        <input class="form__input" type="submit" value="Add product">
+                    </form>
+                </div>
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+            <%- include('./partials/footer.ejs') %>
+
+
+    </body>
+
+</html>

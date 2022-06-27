@@ -95,49 +95,28 @@ app.post("/selling", async (req, res) => {
 
 
 app.get("/update/:id", async (req, res) => {
-
     console.log("LOVE .hg.ryt.tyyyy", req.params)
 
     let resp = await pool.query("SELECT * FROM products");
 
-
-    let id = +(req.params.id);
+    let id = req.params.id;
     let product = resp.rows.find(product => {
-        console.log("product", product);
-        if (product && product.id === id) { 
-           console.log("product", product);
-           return product;
-        } else {
-            console.log('pizda');
-            return 'huy'
-        }
-    
+        return product.id == id;
     });
-
     console.log("LOVE .hg.ryt.tyyyy", product)
-
-    res.render("update", { title: "Update", product });
     try {
+        res.render("update", { title: "Update", product });
         products = JSON.parse(fs.readFileSync("./public/data/products.json"));
     }
     catch (err) {
         console.log(err);
     }
-
-
 })
 
 
 app.post("/update/:id", async (req, res) => {
     let id = +(req.params.id);
-    let product = products.find(product => {
-        if (product && product.id === id) {
-            return product;
-        }
-    }
-    );
-
-        try {
+    try {
         let newProduct = {
             name: req.body.name,
             description: req.body.description,
@@ -145,7 +124,6 @@ app.post("/update/:id", async (req, res) => {
             image: req.body.image
         }
         let result = await pool.query("UPDATE products SET name = $1, description = $2, price = $3, img = $4 WHERE id = $5", [newProduct.name, newProduct.description, newProduct.price, newProduct.image, id]);
-
 
         fs.writeFileSync("./public/data/products.json", JSON.stringify(products));
         res.redirect("/buying");
@@ -155,107 +133,29 @@ app.post("/update/:id", async (req, res) => {
 });
 
 
-// app.post("/delete/:id", async (req, res) => {
-//     let id = +(req.params.id);
-//     let product = products.find(product => {
-//         if (product && product.id === id) {
-//             return product;
-//         }
-//     });
-//     try {
-//         let result = await pool.query("DELETE FROM products WHERE id = $1", [id]);
+app.get("/delete/:id", async (req, res) => {
+    let id = +(req.params.id);
+    let product = products.find(product => {
+        if (product && product.id === id) {
+            return product;
+        }
+    });
+    
+    try {
+        let result = await pool.query("DELETE FROM products WHERE id = $1", [id]);
 
-//         fs.writeFileSync("./public/data/products.json", JSON.stringify(products));
-//         res.redirect("/buying");
-//     } catch (err) {
-//         console.log(err);
-//     }
-// });
+        fs.writeFileSync("./public/data/products.json", JSON.stringify(products));
+        res.redirect("/buying");
+    } catch (err) {
+        console.log(err);
+    }
+});
 
-// app.post("/update/", async (req, res) => {
-//     try {
-//         let newProduct = {
-//             name: req.body.name,
-//             description: req.body.description,
-//             price: req.body.price,
-//             image: req.body.image
-//         }
-
-//         let result = await pool.query("UPDATE products SET name = $1, description = $2, price = $3, img = $4 WHERE id = $5", [newProduct.name, newProduct.description, newProduct.price, newProduct.image, req.body.id]);
-
-//         fs.writeFileSync("./public/data/products.json", JSON.stringify(products));
-//         res.redirect("/buying");
-//     } catch (err) {
-//         console.log("ERRORRRR", err);
-//     }
-// });
-
-
-// app.post("/update/:id",async(req,res)=>{
-//     try{
-//         let id = req.params.id;
-//         let newProduct = {
-//             name: req.body.name,
-//             description: req.body.description,
-//             price: req.body.price,
-//             image: req.body.image
-//         }
-//         let result = await pool.query("UPDATE products SET name = $1, description = $2, price = $3, img = $4 WHERE id = $5", [newProduct.name, newProduct.description, newProduct.price, newProduct.image, id]);
-//         fs.writeFileSync("./public/data/products.json", JSON.stringify(products));
-//         res.redirect("/buying");
-//     }
-//     catch(err){
-//         console.log("ERRORRRR",err);
-//     }
-// });
 
 app.get("/buying", async (req, res) => {
     try {
         let resp = await pool.query("SELECT * FROM products");
         res.render("buying", { title: "Total", products: resp.rows });
-    } catch (err) {
-        console.log("ERRORRRR", err);
-    }
-}
-);
-
-
-
-// app.post("/info/add", (req, res) => {
-//     try {
-//         pool.connect(async(err, client, release) => {
-//             let resp = await client.query(`INSERT INTO test (name,price) VALUES ('${req.body.name}', '${req.body.price}')`)
-//             // ', 
-//             console.log(resp);
-//             res.redirect('/info/get');
-//         })
-//     } catch (err) {
-//         console.log("ERRORRRR", err);
-//     }
-// });
-
-
-app.post("/info/delete", (req, res) => {
-    try {
-        pool.connect(async (err, client, release) => {
-            let resp = await client.query(`DELETE FROM test WHERE id = '${req.body.id}'`)
-            // ', 
-            console.log(resp);
-            res.redirect('/info/get');
-        })
-    } catch (err) {
-        console.log("ERRORRRR", err);
-    }
-});
-
-app.post("/info/update", (req, res) => {
-    try {
-        pool.connect(async (err, client, release) => {
-            let resp = await client.query(`UPDATE test SET name = '${req.body.name}', price = '${req.body.price}' WHERE id = '${req.body.id}'`)
-            // ', 
-            console.log(resp);
-            res.redirect('/info/get');
-        })
     } catch (err) {
         console.log("ERRORRRR", err);
     }

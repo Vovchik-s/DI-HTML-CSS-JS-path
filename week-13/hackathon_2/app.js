@@ -2,16 +2,16 @@ const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
 const morgan = require("morgan");
-const { Pool } = require("pg");
-const { release } = require("os");
+const { Pool } = require("pg"); // connect to a postgres db
+const { release } = require("os"); // connect to a postgres db
 const fileUpload = require("express-fileupload");
 
 require("dotenv").config(); // load .env file
 
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080; // set port from .env file
 
-const knex = require("knex")({
+const knex = require("knex")({ // not in use. Needed for uploaded images to be saved BLOB tyle in db
     client: "pg",
     connection: {
         host: process.env.DB_HOST,
@@ -24,15 +24,15 @@ const knex = require("knex")({
 });
 
 
-let pool = new Pool()
+let pool = new Pool() // create a pool of connections to the db
 
-const corOptions = {
+const corOptions = { // allow cross requests
     origin: "http://localhost:8081",
     optionsSuccessStatus: 200
 };
 
 
-let products = [];
+let products = [];  // before DB , stored products in JSON file
 
 // express app
 const app = express();

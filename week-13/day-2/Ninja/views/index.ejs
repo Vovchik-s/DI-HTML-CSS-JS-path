@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robofriends</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<section>
+        <nav>
+            <h1>ROBOFRIENDS</h1>
+
+    <!-- find robot -->
+    <form action="/find" method="GET">
+        <input class="robot-search" name="name" id="robo-search" type="search" placeholder="Search for robo-friend" aria-label="Search">
+        <input type="submit" value="Find a robot">
+    </form>
+
+        </nav>
+        <div id="robo-liblrary">
+            <% users.forEach(robot => {  %>
+                <div class="robot">
+                    <div class="robo-box">
+                    <img src="	https://robohash.org/<%= robot.id %>?200x200" alt="<%= robot.name %>">
+                    <h3><%= robot.name %></h3>
+                    <h5><%= robot.email %></>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
             <!-- <- include('../partials/post.ejs') %> -->
 
             <div class="d-flex flex-column ">
-                <form class="form-group w-25 p-3">
+                <form method="POST" action="search" class="form-group w-25 p-3">
                     <label for="my-select">Search by category</label>
                     <select name="category" id="my-select" class="custom-select" >
                         <option>Historic Events</option>
@@ -36,9 +36,9 @@
                 </form>
 
 
-                <form method="get" action="/search/" class="form-group w-25 p-3">
+                <form method="POST" action="search" class="form-group w-25 p-3">
                     <label for="my-select">Search by title</label>
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search by title" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search by title" name="search" aria-label="Search">
                     <button class="btn btn-primary mt-4" type="submit">Search</button>
                 </form>
             </div>

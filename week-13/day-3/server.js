@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
 
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -46,18 +47,22 @@ fs.writeFileSync('./public/data.json', JSON.stringify(items));
         // res.render('search', {  data: JSON.parse(data)  });
     });
 
-
-    app.post('/search', (req, res) => {
+    app.post('/search/', urlencodedParser, (req, res) => {
         let data = fs.readFileSync('./public/data.json');
         let search = req.body.search;
-        let filtered = JSON.parse(data).filter((item) => item.title.includes(search));
-        res.render('search', { data: filtered });
-    }
-    );
+        let category = req.body.category;
 
+        
+        let filtered = JSON.parse(data).filter((item) => {
+            if(category === 'all') {
+                return item.category.toLowerCase().includes(category.toLowerCase());
+            }
+            return item.title.toLowerCase().includes(search.toLowerCase()) 
+        });
+        res.render('index', { data: filtered });
+    });
 
     app.listen(port, () => console.log(`Server is running on port ${port}`));
-
 
 })();
 

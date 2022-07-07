@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+            <!-- <- include('../partials/post.ejs') %> -->
+
+            <div class="d-flex flex-column ">
+                <form class="form-group w-25 p-3">
+                    <label for="my-select">Search by category</label>
+                    <select name="category" id="my-select" class="custom-select" >
+                        <option>Historic Events</option>
+                        <option>Holidays & Events</option>
+                        <option>Travel & Tourism</option>
+                        <option>North America</option>
+                        <option>US States</option>
+                        <option>Sports & Games</option>
+                        <option>Technology</option>
+                        <option>Game Consoles</option>
+                        <option>Food & Drink</option>
+                        <option>Fast Food</option>
+                        <option>Space</option>
+                        <option>Zodiac Signs</option>
+                        <option>Physics</option>
+                        <option>Big Questions</option>
+                        <option>Earth & Moon</option>
+                        <option>Health & Body</option>
+                        <option>Celebrities</option>
+                        <option>Actors</option>
+                        <option>Fact Lists</option>
+                        <option>Male Celebs</option>
+                    </select>
+                    <button class="btn btn-primary mt-4" type="submit">Search</button>
+                </form>
+
+
+                <form method="get" action="/search/" class="form-group w-25 p-3">
+                    <label for="my-select">Search by title</label>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search by title" aria-label="Search">
+                    <button class="btn btn-primary mt-4" type="submit">Search</button>
+                </form>
+            </div>
+            
+
+                <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

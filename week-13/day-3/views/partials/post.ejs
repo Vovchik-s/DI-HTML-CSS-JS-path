@@ -1,0 +1,31 @@
+<% data.forEach(function(post) { %>
+    <div class="post">
+
+        <h3><a href="<%= post.link  %>">
+                <%= post.title %>
+            </a></h3>
+
+        <p>
+            <%= post.contentSnippet %>
+        </p>
+
+        <h5 class="author">
+            <%= post.creator %>
+        </h5>
+
+        <h6 class="publication">
+            <%= post.pubDate %>
+        </h6>
+
+        <h6 class="categories mb-4">
+            <ul>
+                Category :
+                <% post.categories.forEach(function(category) { %>
+                    <li class="mb-4"><%= category %></li>
+                    <% }) %>
+        </h6>
+        </ul>
+    </div>
+    <% }); %>
+
+        <!-- publication date, creator, category and content of the post -->
